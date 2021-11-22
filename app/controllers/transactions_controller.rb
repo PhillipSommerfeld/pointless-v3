@@ -18,6 +18,8 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction,.new(transaction_params)
+    if @transaction.save
+      redirect_to list_path(@transactions.index)
   end
 
   def update
@@ -26,6 +28,7 @@ class TransactionsController < ApplicationController
 
   def destroy
     @transaction.destroy
+    redirect_to list_path(@transactions.index)
         #maybe redirect somewhere else?
   end
 
