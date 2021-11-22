@@ -9,6 +9,7 @@
         <p><%=offer.description%></p>
       </div>
       <h2 class="card-trip-pricing"><%=offer.price%></h2>
+      <%=link_to("See Details", offer_path(offer))%>
     </div>
   </div>
 <%end%>
