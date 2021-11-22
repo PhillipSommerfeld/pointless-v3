@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-    before_action :set_order, only: [:show, :edit, :update, :destroy]
+    before_action :set_transaction, only: [:show, :edit, :update, :destroy]
 
 #Basic Crud Actions
   def index
