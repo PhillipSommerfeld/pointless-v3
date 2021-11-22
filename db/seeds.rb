@@ -13,7 +13,8 @@ User.delete_all
   users = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    address: Faker::Address.street_address
+    address: Faker::Address.street_address,
+    password: 'sdfasdfadsff'
   )
   users.save
 end
