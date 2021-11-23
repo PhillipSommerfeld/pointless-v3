@@ -1,5 +1,8 @@
 <h1>New Transaction</h1>
 
-<%= render 'form', transaction: @transaction %>
+<%= simple_form_for :transaction, url: new_offer_transaction_path, method: "POST" do |f| %>
+  <%# <%= f.input :comment %>
+  <%= f.button :submit, 'Confirm Purchase' %>
+<% end %>
 
-<%= link_to 'Go Back', transactions_path %>
+<%# <%= link_to 'Go Back', transactions_path %>
