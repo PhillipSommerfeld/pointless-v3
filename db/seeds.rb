@@ -14,7 +14,7 @@ User.delete_all
     name: Faker::Name.name,
     email: Faker::Internet.email,
     address: Faker::Address.street_address,
-    password: 'sdfasdfadsff'
+    password: 'test1234'
   )
   users.save
 end
@@ -25,7 +25,7 @@ User.all.each do |user|
       item_name: Faker::Movie.title,
       price: rand(5..20),
       description: Faker::Lorem.paragraph,
-      image_url: "https://picsum.photos/#{rand(100..300)}",
+      image_url: "https://lorempixel.com/800/400/sports/#{rand(1..10)}/",
       quantity: rand(1..5),
       user_id: user.id
     )
