@@ -3,31 +3,34 @@ class TransactionsController < ApplicationController
 
 #Basic Crud Actions
   def index
-    @transactions = Transaction.all
+    @transactions = policy_scope(Transaction)
   end
 
   def show
+    authorize @transaction
   end
 
   def new
     @transaction = Transaction.new
+    authorize @transaction
   end
 
   def edit
+    authorize @transaction
   end
 
   def create
     @transaction = Transaction.new(transaction_params)
-    if @transaction.save
-      redirect_to list_path(@transactions.index)
-    end
+    @transaction.user = current_user
+    authorize @transaction
   end
 
   def update
-  #Needs to be improved
+    authorize @transaction
   end
 
   def destroy
+    authorize @transaction
     @transaction.destroy
     redirect_to list_path(@transactions.index)
         #maybe redirect somewhere else?
