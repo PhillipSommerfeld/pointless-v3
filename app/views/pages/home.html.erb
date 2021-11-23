@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <%= stylesheet_link_tag 'home' %>
-  </head>
-    <body>
-      <h1>Home</h1>
-      <div class="container">
-        <% if user_signed_in? %>
-          <p> You are logged in! 😎 </p>
-        <%= current_user.email %>
-        <% else %>
-          <p> You need to log in! 🥴 </p>
-          <%= link_to "Log in", new_user_session_path  %>
-          <%= link_to "Sign up", new_user_registration_path  %>
-        <% end %>
-      </div>
-    </body>
-</html>
+<div class="container-img">
+  <div class="banner"  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://thumbs.dreamstime.com/z/going-around-circles-words-circle-ribbons-colorful-stuck-endless-repetitive-circular-pattern-to-illustrate-being-lost-31772655.jpg') ;">
+    <div class="container">
+      <h1>pointLESS brings <strong>pointLESS</strong> content to <strong>creative people</strong>!</h1>
+      <p>Change your life and learn how to create pointLESS content </p>
+      <%# <a class="btn btn-flat" href="#">Sign up</a> %>
+      <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-flat'  %>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-bolt"></i> <i class="fas fa-bolt"></i> <i class="fas fa-bolt"></i> at Le Wagon
+  </div>
+</div>
+
