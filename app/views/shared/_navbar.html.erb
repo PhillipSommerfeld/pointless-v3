@@ -11,23 +11,34 @@
       <li class="nav-item active">
       <nav class="navbar-lewagon .navbar-collapse">
           <div class="topnav">
-            <a class="active" href="#home">Home</a>
+            <%= link_to root_path do %>
+              <p class = "nomargin">Home</p>
+            <% end %>
             <a href="#about">About us</a>
-            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-            <div class="dropdown-content">
-              <a href="#Offers">Offers</a>
-              <a href="#Transactions">Transactions</a>
+            <%= link_to offers_path do %>
+              <p class = "nomargin"> Browse </p>
+            <% end %>
+            <div class="dropdown">
+              <% if user_signed_in? %>
+                <a href="javascript:void(0)" class="dropbtn"><%= current_user.email %></a>
+                <div class="dropdown-content">
+                  <li class="nav-item active">
+                    <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "nav-link" , data: { confirm: "You sure?" } %>
+                  </li>
+                  <a href="#Transactions">Transactions</a>
+                </div>
+              <% else %>
+                <a href="javascript:void(0)" class="dropbtn"> Login/Signup</a>
+                <div class="dropdown-content">
+                  <li class="nav-item active">
+                      <%= link_to "Sign up", new_user_registration_path%>
+                      <%= link_to "Log in", new_user_session_path %>
+                  </li>
+                </div>
+              <% end %>
             </div>
           </div>
       </nav>
-      </li>
-      <li class="nav-item active">
-        <% if user_signed_in? %>
-          <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "nav-link" , data: { confirm: "You sure?" } %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path%>
-          <%= link_to "Log in", new_user_session_path %>
-        <% end %>
       </li>
     </ul>
   </div>

@@ -45,6 +45,16 @@
 //   float: left;
 // }
 
+.topnav {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10px;
+}
+
+.nomargin {
+  margin-bottom: 0px;
+}
+
 li a, .dropbtn {
   display: inline-block;
   color: black;
