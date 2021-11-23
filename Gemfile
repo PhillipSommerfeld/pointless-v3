@@ -5,7 +5,6 @@ ruby '2.7.4'
 gem 'devise'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -36,6 +35,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'
