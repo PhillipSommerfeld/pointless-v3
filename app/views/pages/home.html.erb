@@ -1,10 +1,26 @@
-<h1>Pages#home</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'home' %>
+      <nav class="navbar-lewagon .navbar-collapse">
+          <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#Offers">Offers</a>
+            <a href="#Transactions">Transactions</a>
+            <a href="#about">About us</a>
+          </div>
+      </nav>
+  </head>
+    <body>
+      <h1>Pages#home</h1>
 
-<% if user_signed_in? %>
-  <p> You are logged in! 😎 </p>
-<%= current_user.email %>
-<% else %>
-  <p> You need to log in! 🥴 </p>
-  <%= link_to "Log in", new_user_session_path  %>
-  <%= link_to "Sign up", new_user_registration_path  %>
-<% end %>
+      <% if user_signed_in? %>
+        <p> You are logged in! 😎 </p>
+      <%= current_user.email %>
+      <% else %>
+        <p> You need to log in! 🥴 </p>
+        <%= link_to "Log in", new_user_session_path  %>
+        <%= link_to "Sign up", new_user_registration_path  %>
+      <% end %>
+    </body>
+</html>
