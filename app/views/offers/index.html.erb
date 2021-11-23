@@ -13,3 +13,7 @@
     </div>
   </div>
 <%end%>
+
+<% if policy(Offer).new? %>
+  <%= link_to "Sell an item", new_offer_path %>
+<% end %>
