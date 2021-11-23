@@ -3,11 +3,12 @@ class TransactionsController < ApplicationController
 
 #Basic Crud Actions
   def index
-    @transactions = policy_scope(Transaction)
+    authorize @transaction
+    @user = User.find(params[:user_id])
+    @transactions = @user.transactions
   end
 
   def show
-    authorize @transaction
   end
 
   def new
@@ -16,25 +17,27 @@ class TransactionsController < ApplicationController
   end
 
   def edit
-    authorize @transaction
   end
 
   def create
+    @offer = Offer.find(params[:offer_id])
     @transaction = Transaction.new(transaction_params)
     @transaction.user = current_user
-    authorize @transaction
+    @transaction.offer = @offer
+    if @transaction.save
+      redirect_to offers_path
+    end
   end
 
-  def update
-    authorize @transaction
-  end
+  # def update
+  # #Needs to be improved
+  # end
 
-  def destroy
-    authorize @transaction
-    @transaction.destroy
-    redirect_to list_path(@transactions.index)
-        #maybe redirect somewhere else?
-  end
+  # def destroy
+  #   @transaction.destroy
+  #   redirect_to list_path(@transactions.index)
+  #       #maybe redirect somewhere else?
+  # end
 
   private
 

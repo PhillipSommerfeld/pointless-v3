@@ -18,7 +18,9 @@
             <p> <%=  "#{@offer.quantity} left in stock"%> </p>
           <% end %>
         </div>
-        <button type="button" class="btn btn-primary"> Buy </button>
+        <%= link_to new_offer_transaction_path(@offer) do  %>
+        <div type="button" class="btn btn-primary"> Buy </div>
+        <% end %>
       </div>
     </div>
   </div>
