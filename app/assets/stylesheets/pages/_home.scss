@@ -3,6 +3,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 100%;
 }
 
 .banner h1 {
@@ -47,26 +48,14 @@
   color: white;
 }
 
-.btn-gradient {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
-}
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
-}
 
 .container-img {
   background-size: cover;
   background-image: asset-url("landingpage.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  height: 550px;
 }
 
 .footer {
@@ -74,7 +63,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 70px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
@@ -108,7 +97,7 @@ h1{
   animation: moveInLeft 1s ease-out;
   font-size: 3rem;
   background-color: RGBA(0, 0, 0, 0.7);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 @keyframes moveInLeft {
@@ -156,3 +145,14 @@ h1{
       transform: translate(0);
     }
   }
+
+.footer-copyright .highlight {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+
+  // padding: 0px 10px;
+}
+.footer-copyright .highlight:hover {
+  opacity: 1;
+}
