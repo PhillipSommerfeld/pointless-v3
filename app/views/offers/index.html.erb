@@ -11,7 +11,7 @@
               <h2><%=truncate(offer.item_name, length: 28)%></h2>
               <p><%=truncate(offer.description, :length =>80)%></p>
             </div>
-            <h2 class="card-trip-pricing">€<%=offer.price%></h2>
+            <h2 class="card-trip-pricing"><%=number_with_precision(offer.price, :precision => 2)%>€</h2>
           </div>
         </div>
       <%end%>
