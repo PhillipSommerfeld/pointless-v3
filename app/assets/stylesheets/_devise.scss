@@ -1,3 +1,5 @@
+@import "config/colors";
+
 .logincontainer {
   display: flex;
   justify-content: center;
@@ -11,6 +13,10 @@
 
 .form-inputs {
   position: relative;
+}
+.boolean {
+  justify-content: center;
+  letter-spacing: 2px
 }
 
 .links_for_login {
@@ -36,6 +42,7 @@
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+  position: center
 }
 .btn {
   transition-duration: 0.4s;
@@ -44,4 +51,7 @@
   background-color: E7EEEE;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.btn-reset {
+  position: relative;
 }
