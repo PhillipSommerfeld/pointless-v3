@@ -2,10 +2,9 @@
 
 <% if user_signed_in? %>
   <p> You are logged in! 😎 </p>
-<%= current_user.email! %>
+<%= current_user.email %>
 <% else %>
   <p> You need to log in! 🥴 </p>
+  <%= link_to "Log in", new_user_session_path  %>
+  <%= link_to "Sign up", new_user_registration_path  %>
 <% end %>
-
-<%= link_to "Log in", new_user_session_path  %>
-<%= link_to "Sign up", new_user_registration_path  %>

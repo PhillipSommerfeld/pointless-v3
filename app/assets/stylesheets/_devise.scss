@@ -1,0 +1,21 @@
+.logincontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-inputs {
+  position: relative;
+}
+
+.links_for_login {
+  font-size: 12px;
+  top: 155px;
+  position: absolute;
+}
+
+.remember_me {
+  position: relative;
+  top: 25px;
+}
