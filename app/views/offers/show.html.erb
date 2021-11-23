@@ -1,14 +1,25 @@
-<div class = "Container">
-  <div class = "image_show"><%= image_tag("#{@offer.image_url}") %></div>
+<div class="container_show">
+  <div class = "contents_showing">
+      <%= link_to offers_path do %>
+        <button class="effect effect-5" href="#" title="Back">Back</button>
+      <% end %>
+    <div class = "content_show">
+      <div class = "image_show"><%= image_tag("#{@offer.image_url}") %></div>
 
-  <div class = "Textbox_show">
-  <h1> <%= @offer.item_name %> </h1>
-  <p> <%= @offer.description %> </p>
-  <p> <%= "#{@offer.price}€" %> </p>
-  <% if @offer.quantity.to_i == 0 %>
-    <p> <%= "Sorry we do not have this item in stock" %> </p>
-  <% else %>
-    <p> <%=  "#{@offer.quantity} left in stock"%> </p>
-  <% end %>
+      <div class = "textbox_show">
+        <h1> <%= @offer.item_name %> </h1>
+        <p> <%= @offer.description %> </p>
+        <hr>
+        <div class="stock_price">
+          <p> <%= "#{@offer.price}€" %> </p>
+          <% if @offer.quantity.to_i == 0 %>
+            <p> <%= "Sorry we do not have this item in stock" %> </p>
+          <% else %>
+            <p> <%=  "#{@offer.quantity} left in stock"%> </p>
+          <% end %>
+        </div>
+        <button type="button" class="btn btn-primary"> Buy </button>
+      </div>
+    </div>
   </div>
 </div>

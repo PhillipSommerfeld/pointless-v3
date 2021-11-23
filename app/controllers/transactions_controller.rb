@@ -17,7 +17,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @transaction = Transaction,.new(transaction_params)
+    @transaction = Transaction.new(transaction_params)
     if @transaction.save
       redirect_to list_path(@transactions.index)
     end
