@@ -20,6 +20,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction,.new(transaction_params)
     if @transaction.save
       redirect_to list_path(@transactions.index)
+    end
   end
 
   def update
