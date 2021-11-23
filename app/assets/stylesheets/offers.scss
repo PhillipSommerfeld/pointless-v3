@@ -2,6 +2,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.cards a:hover {
+  text-decoration: none;
+}
+
+.cards a {
+  text-decoration: none;
 }
 
 .main-content {
@@ -48,6 +58,11 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
+  transition: transform .3s;
+}
+
+.card-trip:hover {
+  transform: scale(1.03);
 }
 
 .card-trip a:hover {
@@ -81,7 +96,7 @@
   align-items: flex-start;
   position: relative;
   text-decoration: none;
-  color: gray;
+  color: $gray;
   height: 80px;
 }
 
