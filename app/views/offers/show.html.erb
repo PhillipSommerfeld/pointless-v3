@@ -11,7 +11,7 @@
         <p> <%= @offer.description %> </p>
         <hr>
         <div class="stock_price">
-          <p> <%= "#{@offer.price}€" %> </p>
+          <p> <%= number_with_precision(@offer.price, :precision => 2)%>€ </p>
           <% if @offer.quantity.to_i == 0 %>
             <p> <%= "Sorry we do not have this item in stock" %> </p>
           <% else %>

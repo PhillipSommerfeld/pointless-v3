@@ -1,7 +1,7 @@
 @import "config/colors";
 
 $duration:20s;
-$ease:ease-in-out;
+$ease:linear;
 .holder{
 	width:50px;
 	height: 25px;
@@ -14,21 +14,21 @@ $ease:ease-in-out;
 		transform:translateX(-50%);
 		transform-origin:bottom center;
 	}
-	@for $k from 1 through 16{
+	@for $k from 1 through 40{
 		.circle:nth-child(#{$k}){
 			$size:0;
 			@if($k > 1){
-				$size:3.1px * ($k - 1);
-				border:1.3px solid black;
+				$size:1.163px * ($k - 1);
+				border:0.01925px solid black;
 			}@else{
-				$size:2.5px;
+				$size:0.371px;
 				background:black;
 			}
 			border-bottom:none;
 			border-radius:$size $size 0 0;
 			width:$size;
 			height:$size / 2;
-			z-index: 16 - $k;
+			z-index: 40 - $k;
 			animation: circle-#{$k} $duration infinite $ease;
 		}
 		@keyframes circle-#{$k}{
