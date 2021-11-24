@@ -9,7 +9,7 @@
           <div class="card-trip-infos">
             <div>
               <h2><%=truncate(offer.item_name, length: 28)%></h2>
-              <p><%=truncate(offer.description, :length =>80)%></p>
+              <p><%=truncate(offer.description, :length =>70)%></p>
             </div>
             <h2 class="card-trip-pricing"><%=number_with_precision(offer.price, :precision => 2)%>€</h2>
           </div>
@@ -21,5 +21,4 @@
 </div>
 
 <% if policy(Offer).new? %>
-  <%= link_to "Sell an item", new_offer_path %>
 <% end %>
