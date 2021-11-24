@@ -4,7 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: left;
-  margin-bottom: 30px;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto
+
 }
 
 .contents_showing {
@@ -13,6 +16,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding-top: 5px;
   border-radius: 5px;
+  margin-bottom: 250px;
 }
 
 hr {
@@ -37,7 +41,7 @@ hr {
   justify-content: space-between;
   flex-direction: column;
   // margin: 0 auto;
-  min-height: 500px;
+  // min-height: 500px;
   padding: 5px 25px 25px 25px;
 }
 
@@ -71,9 +75,23 @@ hr {
 }
 
 .textbox_show {
-  padding: 20px 10px 5px 10px;
+  padding: 15px 10px 5px 10px;
   float: left;
 }
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .container_show {
+    width: 96%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .container_show {
+    width: 92%;
+  }
+}
+
 
 // back button effect
 $button-bg-5: #F28123;
