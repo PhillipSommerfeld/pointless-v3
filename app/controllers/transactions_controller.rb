@@ -26,7 +26,9 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
     @transaction.offer = @offer
     if @transaction.save
-      redirect_to offers_path
+      redirect_to offers_path(@offer)
+    else
+      render "offer/show"
     end
   end
 
@@ -48,5 +50,9 @@ class TransactionsController < ApplicationController
 
     def transaction_params
       params.require(:transaction).permit(:offer_id, :user_id, :item_price)
+    end
+
+    def find_offer
+      @offer = Offer.find(params[:offer_id])
     end
 end
