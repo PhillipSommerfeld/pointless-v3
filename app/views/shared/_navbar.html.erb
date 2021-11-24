@@ -3,7 +3,7 @@
     <div class="ultimatelogo"><div class = "newlogo"><%=  render 'shared/newlogo' %> </div>
     <%= image_tag "lesslogo.png", alt: "alttext", class: "logo" %></div>
   <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -21,7 +21,7 @@
             <% end %>
             <div class="dropdown">
               <% if user_signed_in? %>
-                <a href="javascript:void(0)" class="dropbtn"><%= current_user.email %></a>
+                <a href="#" class="dropbtn"><%= current_user.email %></a>
                 <div class="dropdown-content">
                   <li class="nav-item active">
                     <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "nav-link" , data: { confirm: "You sure?" } %>
@@ -29,7 +29,7 @@
                   <a href="#Transactions">Transactions</a>
                 </div>
               <% else %>
-                <a href="javascript:void(0)" class="dropbtn"> Login/Signup</a>
+                <a href="#" class="dropbtn"> Login/Signup</a>
                 <div class="dropdown-content">
                   <li class="nav-item active">
                       <%= link_to "Sign up", new_user_registration_path%>
