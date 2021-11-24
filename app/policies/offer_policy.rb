@@ -6,7 +6,7 @@ class OfferPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    new?
   end
 
   def new?
