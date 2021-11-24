@@ -15,15 +15,39 @@
 @import "offershow";
 @import "offers";
 @import "newlogo";
+@import "footer";
 
 .logo {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  // border-radius: 50% 50% 20px 10px;
+  // box-shadow: 0px 15px 10px -15px grey;
+  // box-shadow: inset -3px -15px 5px -15px grey;
+  -webkit-filter: drop-shadow(5px 5px 5px grey);
+  filter: drop-shadow(5px 5px 5px grey);
 }
 
 .newlogo{
 	overflow:hidden;
   height: 50px;
   width: 50px;
+  -webkit-filter: drop-shadow(5px 5px 5px grey);
+  filter: drop-shadow(5px 5px 5px grey);
+  // border-radius: 50% 50% 20px 10px;
+  // box-shadow: 0px 15px 10px -15px grey;
+  // box-shadow: inset 3px -15px 5px -15px grey;
 }
+
+// #navbar {
+//   z-index: 10;
+// }
+
+// .sticky {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+// }
+
+// .sticky + .page_items {
+//   padding-top: 60px;
+// }
