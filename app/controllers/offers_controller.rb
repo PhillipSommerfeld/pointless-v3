@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
-  before_action :set_offer, only: [show, edit, update, destroy]
+  before_action :set_offer, only: [ :show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user! , only: [:index, :show]
 
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
@@ -29,6 +30,16 @@ class OffersController < ApplicationController
 
   def edit
     authorize @offer
+  end
+
+  def update
+    @offer.update(offer_params)
+    authorize @offer
+    if @offer.update(offer_params)
+      redirect_to offer_path(@offer)
+    else
+      render :edit
+    end
   end
 
   def destroy
