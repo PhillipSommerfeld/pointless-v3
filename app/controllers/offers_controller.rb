@@ -9,6 +9,7 @@ class OffersController < ApplicationController
   end
 
   def new
+    @offer = Transaction.find(params[:id])
     authorize @offer
   end
 
