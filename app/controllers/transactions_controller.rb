@@ -3,7 +3,6 @@ class TransactionsController < ApplicationController
 
 #Basic Crud Actions
   def index
-    authorize @transaction
     @user = User.find(params[:user_id])
     @transactions = @user.transactions
   end
@@ -12,25 +11,29 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @offer = Offer.find(params[:offer_id])
     @transaction = Transaction.new
-    #@transaction = Offer.find(params[:id])
+    # @transaction = Offer.find(params[:id])
     authorize @transaction
+  end
+
+  def create
+    @offer = Offer.find(params[:offer_id])
+    @transaction = Transaction.new
+    authorize @transaction
+    @transaction.user = current_user
+    @transaction.offer = @offer
+    @transaction.item_price = @offer.price
+    if @transaction.save
+      redirect_to offer_path(@offer)
+    else
+      render "offer/show"
+    end
   end
 
   def edit
   end
 
-  def create
-    @offer = Offer.find(params[:offer_id])
-    @transaction = Transaction.new(transaction_params)
-    @transaction.user = current_user
-    @transaction.offer = @offer
-    if @transaction.save
-      redirect_to offers_path(@offer)
-    else
-      render "offer/show"
-    end
-  end
 
   # def update
   # #Needs to be improved
@@ -44,15 +47,12 @@ class TransactionsController < ApplicationController
 
   private
 
-    def set_transaction
-      @transaction = Transaction.find(params[:id])
-    end
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
+  end
 
-    def transaction_params
-      params.require(:transaction).permit(:offer_id, :user_id, :item_price)
-    end
 
-    def find_offer
-      @offer = Offer.find(params[:offer_id])
-    end
+  def find_offer
+    @offer = Offer.find(params[:offer_id])
+  end
 end
