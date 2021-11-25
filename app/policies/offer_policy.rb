@@ -17,8 +17,19 @@ class OfferPolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    record.user_id == user.id
+  end
+
+  def update?
+    record.user_id == user.id
+  end
+
+  def delete?
+    record.user_id == user.id
+  end
+
   def index?
     return true
   end
-
 end
