@@ -26,10 +26,13 @@
                   <li class="nav-item active">
                     <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "nav-link" , data: { confirm: "You sure?" } %>
                   </li>
-                  <a href="#Transactions">Transactions</a>
+                  <li class="nav-item active">
+                      <%= link_to "Transactions", new_offer_path%>
+                  </li>
                 </div>
               <% else %>
                 <a href="#" class="dropbtn"> Login/Signup</a>
+
                 <div class="dropdown-content">
                   <li class="nav-item active">
                       <%= link_to "Sign up", new_user_registration_path%>
