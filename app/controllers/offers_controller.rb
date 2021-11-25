@@ -4,7 +4,8 @@ class OffersController < ApplicationController
 
   def index
     if params[:query].present?
-      @offers = policy_scope(Offer).where("item_name ILIKE ?", "%#{params[:query]}%").order(created_at: :desc)
+      sql_query = "item_name ILIKE :query OR description ILIKE :query"
+      @offers = policy_scope(Offer).where(sql_query, query: "%#{params[:query]}%").order(created_at: :desc)
     else
       @offers = policy_scope(Offer).order(created_at: :desc)
     end
