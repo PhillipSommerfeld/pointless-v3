@@ -3,8 +3,16 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user! , only: [:index, :show]
 
   def index
-    @offers = policy_scope(Offer).order(created_at: :desc)
+    if params[:query].present?
+      @offers = policy_scope(Offer).where("item_name ILIKE ?", "%#{params[:query]}%").order(created_at: :desc)
+    else
+      @offers = policy_scope(Offer).order(created_at: :desc)
+    end
   end
+
+  # def index
+  #   @offers = policy_scope(Offer).order(created_at: :desc)
+  # end
 
   def show
     authorize @offer
