@@ -5,6 +5,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @transactions = current_user.transactions
-
+    @offers = Offer.all
   end
 end

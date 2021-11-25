@@ -5,7 +5,7 @@
     <%@offers.each do |offer| %>
       <%= link_to offer_path(offer) do %>
         <div class="card-trip">
-          <img src="<%=offer.image_url%>" />
+          <%= cl_image_tag offer.photo.key%>
           <div class="card-trip-infos">
             <div>
               <h2><%=truncate(offer.item_name, length: 28)%></h2>

@@ -4,7 +4,7 @@
         <button class="effect effect-5" href="#" title="Back">Back</button>
       <% end %>
     <div class = "content_show">
-      <div class = "image_show"><%= image_tag("#{@offer.image_url}") %></div>
+      <div class = "image_show"><%= cl_image_tag @offer.photo.key %></div>
 
       <div class = "textbox_show">
         <h1> <%= @offer.item_name %> </h1>
