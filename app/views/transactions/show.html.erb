@@ -1,19 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="login-container">
+ <div class="signup-form">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <h1>User:</h1>
-  <%= transaction.user %>
-</p>
+    <p>
+      <h1>User:</h1>
+      <%= transaction.user %>
+    </p>
 
-<p>
-  <h1>User:</h1>
-  <%= transaction.offer %>
-</P>
+    <p>
+      <h1>User:</h1>
+      <%= transaction.offer %>
+    </P>
 
-<p>
-  <h1>User:</h1>
-  <%= transaction.item_price %>
-</P>
-
-<%= link_to 'Edit', edit_transacion_path(@transaction) %>
-<%= link_to 'Back', transactions_path(@transaction) %>
+    <p>
+      <h1>User:</h1>
+      <%= transaction.item_price %>
+    </P>
+    <tbody>
+        <% @transactions.each do |transaction|%>
+          <tr>
+            <td><%= transaction.user_id %></td>
+            <td><%= transaction.offer_id %></td>
+            <td><%= transaction.item_price %></td>
+            <td><%= link_to 'Show', transaction %></td>
+            <%# <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td> %>
+            <%# <td><%= link_to 'Destroy', transaction, method: :delete, data: %></td> %>
+          </tr>
+        <% end %>
+ </div>
+</div>
