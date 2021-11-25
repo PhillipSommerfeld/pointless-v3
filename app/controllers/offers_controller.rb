@@ -27,10 +27,10 @@ class OffersController < ApplicationController
   end
 
   def create
-    @offer = Offer.new(offer.params)
-    @offer.user = current_user
+    @offer = Offer.new(offer_params)
+    @offer.user_id = current_user.id
     authorize @offer
-    if @offer.saver
+    if @offer.save
       redirect_to offer_path(@offer)
     else
       render :new
@@ -60,7 +60,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:item_name, :price, :image_url, :description, :quantity)
+    params.require(:offer).permit(:item_name, :price, :photo, :description, :quantity)
   end
 
   def set_offer
