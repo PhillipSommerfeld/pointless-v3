@@ -11,7 +11,11 @@ table, th, td {
 </style>
 <div class="login-container">
   <table div class="signup-form" border=1 width=80%>
+
       <thead>
+      <tr>
+        <th><span style="font-size: 14px;"><%= link_to("My Dashboard", dashboard_path) %></span></th>
+      </tr>
       <tr>
       <th>Transactions</th>
     </tr>
@@ -34,4 +38,3 @@ table, th, td {
     <%# <%= link_to 'New Transaction', new_transaction_path %>
   </div>
 </div>
-<div class="cancel-transaction"><%= link_to "Go back", offers_path %></div>
