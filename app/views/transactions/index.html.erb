@@ -16,23 +16,17 @@ table, th, td {
       <th>Transactions</th>
     </tr>
         <tr>
-          <th>User</th>
+          <th>Date</th>
           <th>Item</th>
-          <th>Description</th>
           <th>Price</th>
-          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <% @transactions.each do |transaction|%>
           <tr>
-            <td><%= transaction.offer.user_id %></td>
+            <td><%= transaction.offer.created_at.strftime("%Y-%m-%d") %></td>
             <td><%= transaction.offer.item_name %></td>
-            <td><%= transaction.offer.description %></td>
             <td><%= transaction.offer.price %></td>
-            <td><%= link_to 'Show', transaction %></td>
-            <td><%= link_to 'Edit', transaction %></td>
-            <%#<td><%= link_to 'Destroy', transaction, method: :delete, data: %></td>
           </tr>
         <% end %>
       </tbody>
@@ -40,3 +34,4 @@ table, th, td {
     <%# <%= link_to 'New Transaction', new_transaction_path %>
   </div>
 </div>
+<div class="cancel-transaction"><%= link_to "Go back", offers_path %></div>
