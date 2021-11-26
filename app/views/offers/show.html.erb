@@ -19,16 +19,6 @@
                 <p><%=  "#{@offer.quantity} left in stock"%></p>
               <% end %>
           </div>
-          <div class="buy-button">
-            <%= link_to new_offer_transaction_path(@offer) do  %>
-            <%# <div type="button" class="btn btn-primary"> Buy </div> %>
-            <button class="purch-btn draw-border">Purchase</button>
-            <%# <% <div class="btn draw-border">Draw Border</div> %>
-            <% end %>
-          </div>
-        </div>
-
-    </div>
         <% if policy(@offer).edit? %>
           <div id = "ownersfunctions">
             <% if policy(@offer).edit? %>
@@ -47,7 +37,17 @@
             <% end %>
           </div>
         <% else %>
+          <div class="buy-button">
+            <%= link_to new_offer_transaction_path(@offer) do  %>
+            <%# <div type="button" class="btn btn-primary"> Buy </div> %>
+            <button class="purch-btn draw-border">Purchase</button>
+            <%# <% <div class="btn draw-border">Draw Border</div> %>
+            <% end %>
+          </div>
         <% end %>
+        </div>
+
+    </div>
       </div>
     </div>
   </div>
