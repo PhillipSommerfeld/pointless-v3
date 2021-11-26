@@ -12,8 +12,4 @@ class TransactionPolicy < ApplicationPolicy
   def create?
     new?
   end
-
-  def index?
-    return true
-  end
 end

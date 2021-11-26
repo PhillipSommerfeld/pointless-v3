@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @transactions = current_user.transactions
-    @offers = Offer.all
+    @offers = Offer.where(user: current_user)
   end
 end

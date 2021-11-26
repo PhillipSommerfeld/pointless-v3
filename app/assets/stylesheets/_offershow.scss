@@ -1,16 +1,15 @@
 @import "config/colors";
 
-.container_show {
+.show-container {
   display: flex;
   justify-content: center;
   align-items: left;
   max-width: 900px;
   width: 90%;
-  margin: 0 auto
-
+  margin: 0 auto;
 }
 
-.contents_showing {
+.show-main-content {
   margin-top: 30px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -25,12 +24,26 @@ hr {
 }
 .stock_price {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  padding: 6px;
+  font-size: 18px;
 }
 
-.content_show {
+.item-section1 {
+  width:100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.buy-button {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.show-item {
   // margin-top: 30px;
   overflow: hidden;
   // max-width: 1000px;
@@ -46,52 +59,59 @@ hr {
   padding: 5px 25px 25px 25px;
 }
 
-.image_show {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.item-image {
+  width: 50%;
+  // object-fit: cover;
   border-radius: 5px;
 }
 
-.image_show img {
-  object-fit: cover;
-  // height: 100%;
+.item-image img {
   width: 100%;
-  border-radius: 5px;
 }
 
-.textbox_show h1 {
+.item-textbox h1 {
   font-size: 26px;
   font-weight: bold;
   margin: 0;
 }
 
-.textbox_show p {
+.item-textbox p {
   font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 15;
   margin-top: 15px;
-
 }
 
-.textbox_show {
+.item-textbox {
   padding: 15px 10px 5px 10px;
-  float: left;
+  width:50%;
+  min-width: 300px;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
-  .container_show {
+  .show-container {
     width: 96%;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .container_show {
+  .show-container {
     width: 92%;
   }
 }
+
+
+@media (max-width: 760px) {
+  .item-image {
+    width: 70%;
+    margin: auto;
+  }
+  .buy-button {
+    padding-left: 0px;
+  }
 
 #ownersfunctions {
   display: flex;
