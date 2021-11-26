@@ -3,8 +3,8 @@ class TransactionsController < ApplicationController
 
 #Basic Crud Actions
   def index
-    @user = User.find(params[:user_id])
-    @transactions = @user.transactions
+    @user = current_user
+    @transactions = policy_scope(Transaction).where(user: @user)
   end
 
   def show

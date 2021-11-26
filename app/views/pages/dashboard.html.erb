@@ -3,20 +3,18 @@
 <h3> <%= link_to "Add item", new_offer_path %></h3>
 <div class="cards">
     <% @offers.each do |offer| %>
-      <% if offer.user_id == current_user.id %>
-        <%= link_to offer_path(offer) do %>
-          <div class="card-trip">
-            <%= cl_image_tag offer.photo.key %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%=truncate(offer.item_name, length: 28)%></h2>
-                <p><%=truncate(offer.description, :length =>70)%></p>
-              </div>
-              <h2 class="card-trip-pricing"><%=number_with_precision(offer.price, :precision => 2)%>€</h2>
+      <%= link_to offer_path(offer) do %>
+        <div class="card-trip">
+          <%= cl_image_tag offer.photo.key %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%=truncate(offer.item_name, length: 28)%></h2>
+              <p><%=truncate(offer.description, :length =>70)%></p>
             </div>
+            <h2 class="card-trip-pricing"><%=number_with_precision(offer.price, :precision => 2)%>€</h2>
           </div>
-        <%end%>
-      <% end %>
+        </div>
+      <%end%>
     <% end %>
   </div>
 </div>
