@@ -6,4 +6,8 @@ class PagesController < ApplicationController
   def dashboard
     @offers = Offer.where(user: current_user)
   end
+
+  def aboutus
+    @nfteam = ["Jan Phillip Sommerfeld", "Alex Paul", "Nuno Costa", "Tiago Collot"]
+  end
 end
