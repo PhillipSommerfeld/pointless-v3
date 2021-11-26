@@ -6,7 +6,11 @@
       <% end %>
     <div class = "show-item">
       <div class="item-section1">
+<<<<<<< HEAD
         <div class = "item-image"><%= cl_image_tag @offer.photo.key %></div>
+=======
+        <div class = "item-image"><%= cl_image_tag @offer.photo.key.to_s %></div>
+>>>>>>> 55b448e873635b974abb427ff49928b8cf24bc6c
         <div class = "item-textbox">
           <h1><%= @offer.item_name %></h1>
           <p><%= @offer.description %></p>
