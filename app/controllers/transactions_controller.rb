@@ -1,7 +1,8 @@
 class TransactionsController < ApplicationController
     before_action :set_transaction, only: [:show, :edit, :update, :destroy]
 
-#Basic Crud Actions
+  #Basic Crud Actions
+
   def index
     @user = current_user
     @transactions = policy_scope(Transaction).where(user: @user)

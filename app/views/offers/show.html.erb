@@ -38,7 +38,7 @@
                 <%# <% <div class="btn draw-border">Draw Border</div> %>
               <% end %>
             <% end %>
-            <% if policy(@offer).delete? %>
+            <% if policy(@offer).destroy? %>
               <%= link_to offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" } do  %>
                 <%# <div type="button" class="btn btn-primary"> Buy </div> %>
                   <button class="purch-btn draw-border">Delete</button>
