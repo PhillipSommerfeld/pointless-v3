@@ -1,13 +1,16 @@
 <div class="login-container">
   <div class="signup-form">
-    <h1>New Transaction</h1>
-
-  <%= simple_form_for @transaction, url: offer_transactions_path, method: "POST" do |f| %>
-      <%# <%= f.input :comment %>
-    <button type="button" class="signup-btn">
-      <%= f.button :submit, 'Confirm Purchase' %>
-    </button>
-  <% end %>
-      <%= link_to 'Go Back', offers_path %>
+    <h2>Are you sure you want to buy this?</h2>
+    <%# <div class="cancel-description"> %>
+    <div class="confirmation-content">
+      <p>It literally serves no purpose.</p>
+      <%= simple_form_for @transaction, url: offer_transactions_path, method: "POST" do |f| %>
+          <%# <%= f.input :comment %>
+        <button type="button" class="signup-btn">
+          <%= f.button :submit, 'Yes, take my money' %>
+        </button>
+      <% end %>
+      <div class="cancel-transaction"><%= link_to "Nevermind.. I really don't need this", offers_path %></div>
+    </div>
   </div>
 </div>
