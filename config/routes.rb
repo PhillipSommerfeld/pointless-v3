@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 devise_for :users
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard"
+  get "transaction", to: "pages#transaction"
   resources :offers do
     resources :transactions, only: %i[new create]
   end

@@ -1,33 +1,16 @@
-<h1>Create a new For Sale item</h1>
-
-<%= simple_form_for @offer do |f| %>
-  <%= f.input :item_name, required: true, placeholder: "Item name" %>
-  <%= f.input :description, required: true, placeholder: "Item description" %>
-  <%= f.input :price, required: true %>
-  <%= f.input :quantity, required: true %>
-  <%= f.input :photo, as: :file, required: true %>
-  <%= f.submit "Submit item", class: "btn btn-primary" %>
-<% end %>
-
 <div class="login-container">
- <div class="signup-form">
-    <h2> Here are your Transactions </h2>
+  <div class="signup-form">
+    <h1>Create a new For Sale item</h1>
 
-    <p>
-      <h1>User:</h1>
-      <%= @offers_path %>
-    </p>
-
-    <p>
-      <h1>User:</h1>
-      <%= @offer_id %>
-    </P>
-
-    <p>
-      <h1>User:</h1>
-      <%= @transaction %>
-    </P>
- </div>
+      <%= simple_form_for @offer do |f| %>
+        <%= f.input :item_name, required: true, placeholder: "Item name" %>
+        <%= f.input :description, required: true, placeholder: "Item description" %>
+        <%= f.input :price, required: true %>
+        <%= f.input :quantity, required: true %>
+        <%= f.input :photo, as: :file, required: true %>
+        <%= f.submit "Submit item", class: "btn btn-primary" %>
+      <% end %>
+      <%#<%= link_to 'Edit', edit_transaction_path(@transaction) %>
+      <%#<%= link_to 'Back', transactions_path(@transaction) %>
 </div>
-<%#<%= link_to 'Edit', edit_transaction_path(@transaction) %>
-<%#<%= link_to 'Back', transactions_path(@transaction) %>
+  </div>
