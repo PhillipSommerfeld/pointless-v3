@@ -7,25 +7,26 @@
       <div class="item-section1">
         <div class = "item-image"><%= image_tag("#{@offer.image_url}") %></div>
         <div class = "item-textbox">
-          <h1> <%= @offer.item_name %> </h1>
-          <p> <%= @offer.description %> </p>
+          <h1><%= @offer.item_name %></h1>
+          <p><%= @offer.description %></p>
           <hr>
-      </div>
-        <div class="stock_price">
-          <p> <%= number_with_precision(@offer.price, :precision => 2)%>€ </p>
-          <% if @offer.quantity.to_i == 0 %>
-            <p> <%= "Sorry we do not have this item in stock" %> </p>
-          <% else %>
-            <p> <%=  "#{@offer.quantity} left in stock"%> </p>
-          <% end %>
+          <div class="stock_price">
+            <p><%= number_with_precision(@offer.price, :precision => 2)%>€</p>
+            <% if @offer.quantity.to_i == 0 %>
+              <p><%= "Sorry we do not have this item in stock" %></p>
+              <% else %>
+                <p><%=  "#{@offer.quantity} left in stock"%></p>
+              <% end %>
+          </div>
+          <div class="buy-button">
+            <%= link_to new_offer_transaction_path(@offer) do  %>
+            <%# <div type="button" class="btn btn-primary"> Buy </div> %>
+            <button class="purch-btn draw-border">Purchase</button>
+            <%# <% <div class="btn draw-border">Draw Border</div> %>
+            <% end %>
+          </div>
         </div>
-      <div class="buy-button">
-        <%= link_to new_offer_transaction_path(@offer) do  %>
-        <%# <div type="button" class="btn btn-primary"> Buy </div> %>
-          <button class="purch-btn draw-border">Purchase</button>
-        <%# <% <div class="btn draw-border">Draw Border</div> %>
-        <% end %>
-      </div>
+
     </div>
     </div>
   </div>
