@@ -6,7 +6,7 @@
       <% end %>
     <div class = "show-item">
       <div class="item-section1">
-        <div class = "item-image"><%= cl_image_tag @offer.photo.key.to_s %></div>
+        <div class = "item-image"><%= cl_image_tag @offer.photo.key %></div>
         <div class = "item-textbox">
           <h1><%= @offer.item_name %></h1>
           <p><%= @offer.description %></p>
@@ -47,11 +47,6 @@
             <% end %>
           </div>
         <% else %>
-          <%= link_to new_offer_transaction_path(@offer) do  %>
-          <%# <div type="button" class="btn btn-primary"> Buy </div> %>
-            <button class="purch-btn draw-border">Purchase</button>
-          <%# <% <div class="btn draw-border">Draw Border</div> %>
-          <% end %>
         <% end %>
       </div>
     </div>
