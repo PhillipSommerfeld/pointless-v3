@@ -18,7 +18,7 @@
             <p> <%=  "#{@offer.quantity} left in stock"%> </p>
           <% end %>
         </div>
-        <% if @offer.user_id == current_user.id %>
+        <% if policy(@offer).edit? %>
           <div id = "ownersfunctions">
             <% if policy(@offer).edit? %>
               <%= link_to edit_offer_path(@offer) do  %>
