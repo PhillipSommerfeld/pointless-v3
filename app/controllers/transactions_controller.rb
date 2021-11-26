@@ -1,6 +1,5 @@
 class TransactionsController < ApplicationController
     before_action :set_transaction, only: [:show, :edit, :update, :destroy]
-    before_action :skip_authorization
 
   #Basic Crud Actions
 
@@ -41,11 +40,11 @@ class TransactionsController < ApplicationController
   # #Needs to be improved
   # end
 
-  def destroy
-    @transaction.destroy
-    redirect_to transactions_path
+  # def destroy
+  #   @transaction.destroy
+  #   redirect_to list_path(@transactions.index)
   #       #maybe redirect somewhere else?
-   end
+  # end
 
   private
 
