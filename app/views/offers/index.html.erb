@@ -14,20 +14,31 @@
       </div>
     </div>
     <div class="cards">
-    <%@offers.each do |offer| %>
-      <%= link_to offer_path(offer) do %>
-        <div class="card-trip">
-          <img src="<%=offer.image_url%>" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%=truncate(offer.item_name, length: 28)%></h2>
-              <p><%=truncate(offer.description, :length =>70)%></p>
+      <%@offers.each do |offer| %>
+        <%= link_to offer_path(offer) do %>
+          <div class="card-trip">
+            <%# <div id="app">
+              <div class = "cardish animated"> %>
+            <%= cl_image_tag offer.photo.key %>
+              <%# </div>
+              <style class="hover"></style>
+              <section class="demo">
+                <div class="carding"></div>
+                <span class="operator">+</span>
+                <div class="carding"><span>color-dodge</span></div>
+                <span class="operator">+</span>
+                <div class="carding"><span>color-dodge</span></div>
+              </section> %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%=truncate(offer.item_name, length: 28)%></h2>
+                <p><%=truncate(offer.description, :length =>70)%></p>
+              </div>
+              <h2 class="card-trip-pricing"><%=number_with_precision(offer.price, :precision => 2)%>€</h2>
             </div>
-            <h2 class="card-trip-pricing"><%=number_with_precision(offer.price, :precision => 2)%>€</h2>
           </div>
-        </div>
+        <%end%>
       <%end%>
-    <%end%>
     </div>
   </div>
 </div>

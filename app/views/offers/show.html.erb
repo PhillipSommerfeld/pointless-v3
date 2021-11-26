@@ -1,3 +1,4 @@
+
 <div class="show-container">
   <div class = "show-main-content">
       <%= link_to offers_path do %>
@@ -28,6 +29,31 @@
         </div>
 
     </div>
+        <% if policy(@offer).edit? %>
+          <div id = "ownersfunctions">
+            <% if policy(@offer).edit? %>
+              <%= link_to edit_offer_path(@offer) do  %>
+                <%# <div type="button" class="btn btn-primary"> Buy </div> %>
+                  <button class="purch-btn draw-border">Edit</button>
+                <%# <% <div class="btn draw-border">Draw Border</div> %>
+              <% end %>
+            <% end %>
+            <% if policy(@offer).delete? %>
+              <%= link_to offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" } do  %>
+                <%# <div type="button" class="btn btn-primary"> Buy </div> %>
+                  <button class="purch-btn draw-border">Delete</button>
+                <%# <% <div class="btn draw-border">Draw Border</div> %>
+              <% end %>
+            <% end %>
+          </div>
+        <% else %>
+          <%= link_to new_offer_transaction_path(@offer) do  %>
+          <%# <div type="button" class="btn btn-primary"> Buy </div> %>
+            <button class="purch-btn draw-border">Purchase</button>
+          <%# <% <div class="btn draw-border">Draw Border</div> %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

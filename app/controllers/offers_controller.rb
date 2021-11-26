@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
-  before_action :set_offer, only: [ :show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user! , only: [:index, :show]
+  before_action :set_offer, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:query].present?
@@ -27,10 +27,10 @@ class OffersController < ApplicationController
   end
 
   def create
-    @offer = Offer.new(offer.params)
-    @offer.user = current_user
+    @offer = Offer.new(offer_params)
+    @offer.user_id = current_user.id
     authorize @offer
-    if @offer.saver
+    if @offer.save
       redirect_to offer_path(@offer)
     else
       render :new
@@ -60,7 +60,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:item_name, :price, :image_url, :description, :quantity)
+    params.require(:offer).permit(:item_name, :price, :photo, :description, :quantity)
   end
 
   def set_offer

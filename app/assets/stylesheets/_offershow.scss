@@ -103,6 +103,7 @@ hr {
   }
 }
 
+
 @media (max-width: 760px) {
   .item-image {
     width: 70%;
@@ -111,6 +112,10 @@ hr {
   .buy-button {
     padding-left: 0px;
   }
+
+#ownersfunctions {
+  display: flex;
+  justify-content: space-between;
 }
 
 
